@@ -3,6 +3,7 @@ package cn.whitetown.pojo;
 import cn.whitetown.utils.IDCreateUtil;
 import com.alibaba.excel.annotation.ExcelIgnore;
 import com.alibaba.excel.annotation.ExcelProperty;
+import com.alibaba.fastjson.JSONArray;
 
 import java.io.Serializable;
 import java.text.DecimalFormat;
@@ -12,7 +13,7 @@ import java.text.DecimalFormat;
  * @date 2020/03/26 17:35
  **/
 
-public class SharesDailyData implements Serializable {
+public class SharesDailyData implements Serializable, CusJsonToObject {
     @ExcelProperty(value = "id",index = 0)
     private String id;
     @ExcelProperty(value = "ts_code",index = 1)
@@ -154,7 +155,8 @@ public class SharesDailyData implements Serializable {
         this.amount = amount;
     }
 
-    public void setAllFields(SharesDailyJsonArray jsonArray){
+    public void setAllFields(Object json){
+        SharesDailyJsonArray jsonArray = (SharesDailyJsonArray)json;
         this.tsCode = jsonArray.getString(0);
         this.tradeData = jsonArray.getString(1);
         this.open = jsonArray.getDouble(2);
@@ -167,6 +169,13 @@ public class SharesDailyData implements Serializable {
         this.vol = (long) (jsonArray.getDouble(9) * 100);
         this.amount = (long)( jsonArray.getDouble(10) * 1000);
         this.id = IDCreateUtil.getId("day");
+    }
+
+    @Override
+    public CusJsonToObject getInstance(Object json) {
+        SharesDailyData instance = new SharesDailyData();
+        instance.setAllFields(SharesDailyJsonArray.getInstance((JSONArray) json));
+        return instance;
     }
 
     @Override

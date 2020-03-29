@@ -2,10 +2,12 @@ package cn.whitetown;
 
 import cn.whitetown.connect.config.FieldsUtil;
 import cn.whitetown.connect.config.TushareInfo;
+import cn.whitetown.pojo.CusJsonToObject;
 import cn.whitetown.pojo.SharesDailyData;
 import cn.whitetown.pojo.SharesDailyJsonArray;
 import cn.whitetown.utils.DailyExcelListener;
 import cn.whitetown.utils.FileUtil;
+import cn.whitetown.utils.JSONUtil;
 import com.alibaba.excel.read.metadata.ReadSheet;
 import com.alibaba.excel.write.metadata.WriteSheet;
 import com.alibaba.fastjson.JSON;
@@ -37,6 +39,8 @@ public class SharesStarter {
 
     @Autowired
     private FileUtil fileUtil;
+    @Autowired
+    private JSONUtil jsonUtil;
 
     public static void main( String[] args ) throws InterruptedException {
         SpringApplication.run(SharesStarter.class);
@@ -46,12 +50,11 @@ public class SharesStarter {
     public void run(){
         LinkedHashMap<String,String> params = new LinkedHashMap<>();
         params.put("ts_code","601398.SH");
-        params.put("start_date","20190301");
+        params.put("start_date","20200301");
         params.put("end_date","20200326");
         String request = FieldsUtil.getParamJson("daily", basicInfo.getToken(), params, null);
         String shares = template.postForObject(basicInfo.getUrl(), request, String.class);
-
-        JSONObject allData = JSON.parseObject(shares);
+      /*  JSONObject allData = JSON.parseObject(shares);
         JSONArray data = allData.getJSONObject("data").getJSONArray("items");
         List<SharesDailyData> sharesDailyDataList = new LinkedList<>();
         data.forEach(new Consumer<Object>() {
@@ -61,9 +64,11 @@ public class SharesStarter {
                 SharesDailyData sharesDailyData = new SharesDailyData();
                 sharesDailyData.setAllFields(SharesDailyJsonArray.getInstance(row));
                 sharesDailyDataList.add(sharesDailyData);
-            }
-        });
 
+            }
+        });*/
+        List<? extends CusJsonToObject> sharesDailyDataList = jsonUtil.getListFields(shares, "data.items", new SharesDailyData());
+        System.out.println(sharesDailyDataList);
         WriteSheet sheet = new WriteSheet();
         sheet.setSheetNo(0);
         sheet.setSheetName("daily");
