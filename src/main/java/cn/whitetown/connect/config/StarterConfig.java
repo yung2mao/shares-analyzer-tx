@@ -1,12 +1,10 @@
-package org.whitetown.connect.config;
+package cn.whitetown.connect.config;
 
+import cn.whitetown.utils.FileUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.whitetown.pojo.SharesDailyData;
-import org.whitetown.utils.FileUtil;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * @author GrainRain

@@ -1,10 +1,8 @@
-package org.whitetown.pojo;
+package cn.whitetown.pojo;
 
+import cn.whitetown.utils.IDCreateUtil;
 import com.alibaba.excel.annotation.ExcelIgnore;
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.alibaba.excel.metadata.BaseRowModel;
-import com.alibaba.fastjson.JSONArray;
-import org.whitetown.utils.IDCreateUtil;
 
 import java.io.Serializable;
 import java.text.DecimalFormat;

@@ -1,4 +1,4 @@
-package org.whitetown.utils;
+package cn.whitetown.utils;
 
 
 /**

@@ -1,4 +1,4 @@
-package org.whitetown.connect.config;
+package cn.whitetown.connect.config;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
