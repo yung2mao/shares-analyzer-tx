@@ -13,7 +13,7 @@ import java.text.DecimalFormat;
  * @date 2020/03/26 17:35
  **/
 
-public class SharesDailyData implements Serializable, CusJsonToObject {
+public class SharesDailyData implements Serializable, CusJsonToObject<SharesDailyData> {
     @ExcelProperty(value = "id",index = 0)
     private String id;
     @ExcelProperty(value = "ts_code",index = 1)
@@ -172,7 +172,7 @@ public class SharesDailyData implements Serializable, CusJsonToObject {
     }
 
     @Override
-    public CusJsonToObject getInstance(Object json) {
+    public SharesDailyData getInstance(Object json) {
         SharesDailyData instance = new SharesDailyData();
         instance.setAllFields(SharesDailyJsonArray.getInstance((JSONArray) json));
         return instance;

@@ -39,6 +39,7 @@ public class SharesStarter {
 
     @Autowired
     private FileUtil fileUtil;
+
     @Autowired
     private JSONUtil jsonUtil;
 
@@ -50,7 +51,7 @@ public class SharesStarter {
     public void run(){
         LinkedHashMap<String,String> params = new LinkedHashMap<>();
         params.put("ts_code","601398.SH");
-        params.put("start_date","20200301");
+        params.put("start_date","20190301");
         params.put("end_date","20200326");
         String request = FieldsUtil.getParamJson("daily", basicInfo.getToken(), params, null);
         String shares = template.postForObject(basicInfo.getUrl(), request, String.class);
@@ -67,8 +68,7 @@ public class SharesStarter {
 
             }
         });*/
-        List<? extends CusJsonToObject> sharesDailyDataList = jsonUtil.getListFields(shares, "data.items", new SharesDailyData());
-        System.out.println(sharesDailyDataList);
+        List<SharesDailyData> sharesDailyDataList = jsonUtil.getListFields(shares, "data.items", new SharesDailyData());
         WriteSheet sheet = new WriteSheet();
         sheet.setSheetNo(0);
         sheet.setSheetName("daily");

@@ -41,14 +41,14 @@ public class JSONUtil {
     }
 
     //按自定义的需求解析json并返回数据
-    public List<? extends CusJsonToObject> getListFields(String json,String field,CusJsonToObject cusJsonToObject){
+    public <T> List<T> getListFields(String json,String field,CusJsonToObject<T> cusJsonToObject){
         String[] fields = field.split("\\.");
         JSONObject preResult = getPreJsonObject(json,fields);
         JSONArray resultJsonArray = preResult.getJSONArray(fields[fields.length-1]);
-        List<CusJsonToObject> list = new ArrayList<>();
+        List<T> list = new ArrayList<>();
         for (int i = 0; i < resultJsonArray.size(); i++) {
-            CusJsonToObject instance = cusJsonToObject.getInstance(resultJsonArray.get(i));
-            list.add(instance);
+            T t = cusJsonToObject.getInstance(resultJsonArray.get(i));
+            list.add(t);
         }
         return list;
     }

@@ -15,7 +15,7 @@ public class StarterConfig {
     @Bean
     public FileUtil fileUtil(){
         try {
-            return FileUtil.getInstance("/Users/taixian/Documents/static/data/sh000001.xlsx");
+            return FileUtil.getInstance("/Users/taixian/Documents/static/data/sh601398.xlsx");
         }catch (IOException e){
             e.printStackTrace();
             throw new RuntimeException();
