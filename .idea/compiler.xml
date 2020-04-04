@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="shares-analyzer" />
+        <module name="shares-view" />
+        <module name="shares-commons" />
+        <module name="shares-post" />
       </profile>
     </annotationProcessing>
   </component>

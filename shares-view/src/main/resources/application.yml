@@ -1,0 +1,15 @@
+server:
+  port: 10003
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shares_analyzer
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 2
+      max-total: 4
+mybatis:
+  mapper-locations: classpath:/mapper_xml/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
