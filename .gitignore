@@ -1,7 +1,7 @@
 /target/
-/src/sparklib/
 /out/
 /shares-post/target/
 /shares-post/src/main/resources/application.yml
 /spark-shares-analyzer/src/sparklib/
 /spark-shares-analyzer/src/lib/
+/shares-view/target/

@@ -1,5 +1,0 @@
-server:
-  port: 10002
-tushare:
-  token: d0022f20ebeba54690f2ea2e9eba0e3164edbd5e06d46a3fb0737205
-  url: http://api.waditu.com

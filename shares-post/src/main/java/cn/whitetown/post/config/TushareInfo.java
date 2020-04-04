@@ -1,4 +1,4 @@
-package cn.whitetown.connect.config;
+package cn.whitetown.post.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

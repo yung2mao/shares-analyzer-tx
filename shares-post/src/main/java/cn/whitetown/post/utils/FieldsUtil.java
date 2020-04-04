@@ -1,4 +1,4 @@
-package cn.whitetown.utils;
+package cn.whitetown.post.utils;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;

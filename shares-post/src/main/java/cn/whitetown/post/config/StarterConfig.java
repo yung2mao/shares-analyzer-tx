@@ -1,4 +1,4 @@
-package cn.whitetown.connect.config;
+package cn.whitetown.post.config;
 
 import cn.whitetown.commons.utils.FileUtil;
 import cn.whitetown.commons.utils.JSONUtil;

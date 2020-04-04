@@ -1,4 +1,4 @@
-package cn.whitetown.pojo;
+package cn.whitetown.post.pojo;
 
 import com.alibaba.fastjson.JSONArray;
 

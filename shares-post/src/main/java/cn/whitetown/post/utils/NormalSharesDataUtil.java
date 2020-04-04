@@ -1,11 +1,11 @@
-package cn.whitetown.utils;
+package cn.whitetown.post.utils;
 
 import cn.whitetown.commons.utils.CusJsonToObject;
 import cn.whitetown.commons.utils.FileUtil;
 import cn.whitetown.commons.utils.IDCreateUtil;
 import cn.whitetown.commons.utils.JSONUtil;
-import cn.whitetown.connect.config.TushareInfo;
-import cn.whitetown.pojo.SharesListData;
+import cn.whitetown.post.config.TushareInfo;
+import cn.whitetown.post.pojo.SharesListData;
 import com.alibaba.fastjson.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

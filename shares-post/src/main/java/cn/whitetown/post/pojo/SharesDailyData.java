@@ -1,4 +1,4 @@
-package cn.whitetown.pojo;
+package cn.whitetown.post.pojo;
 
 import cn.whitetown.commons.utils.CusJsonToObject;
 import cn.whitetown.commons.utils.IDCreateUtil;
