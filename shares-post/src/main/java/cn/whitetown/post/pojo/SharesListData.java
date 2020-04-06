@@ -7,6 +7,8 @@ import java.io.Serializable;
  * @date 2020/04/01 18:04
  **/
 public class SharesListData implements Serializable {
+    private static final long serialVersionUID = 2953533171134331937L;
+
     private String id;
     private String tsCode;
     private String name;

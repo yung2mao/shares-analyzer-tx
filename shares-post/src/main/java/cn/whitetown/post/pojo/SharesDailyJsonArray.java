@@ -8,6 +8,8 @@ import com.alibaba.fastjson.JSONArray;
  **/
 public class SharesDailyJsonArray extends JSONArray {
 
+    private static final long serialVersionUID = -7398540471178599796L;
+
     private JSONArray jsonArray;
 
     private SharesDailyJsonArray(JSONArray jsonArray){

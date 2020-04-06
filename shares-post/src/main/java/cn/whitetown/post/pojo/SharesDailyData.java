@@ -15,6 +15,7 @@ import java.text.DecimalFormat;
  **/
 
 public class SharesDailyData implements Serializable, CusJsonToObject<SharesDailyData> {
+    private static final long serialVersionUID = 7067095184441072182L;
     @ExcelProperty(value = "id",index = 0)
     private String id;
     @ExcelProperty(value = "ts_code",index = 1)

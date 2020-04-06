@@ -8,6 +8,7 @@ import cn.whitetown.post.pojo.SharesDailyData;
 import cn.whitetown.post.utils.DailyExcelListener;
 import cn.whitetown.post.utils.NormalSharesDataUtil;
 import com.alibaba.excel.read.metadata.ReadSheet;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,6 +26,7 @@ import java.util.List;
  *
  */
 @SpringBootApplication
+@MapperScan("cn.whitetown.post.mappers")
 public class SharesStarter {
     @Autowired
     private RestTemplate template;
